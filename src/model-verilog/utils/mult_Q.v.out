@@ -1,0 +1,33 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001fb7d2165c0 .scope module, "mult_Q" "mult_Q" 2 4;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "a";
+    .port_info 1 /INPUT 32 "b";
+    .port_info 2 /OUTPUT 32 "y";
+P_000001fb7d216ca0 .param/l "FBITS" 0 2 6, +C4<00000000000000000000000000011000>;
+P_000001fb7d216cd8 .param/l "WIDTH" 0 2 5, +C4<00000000000000000000000000100000>;
+v000001fb7d216b30_0 .net/s *"_ivl_0", 63 0, L_000001fb7d21d6a0;  1 drivers
+v000001fb7d216750_0 .net/s *"_ivl_2", 63 0, L_000001fb7d21d740;  1 drivers
+o000001fb7d127008 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v000001fb7d2167f0_0 .net/s "a", 31 0, o000001fb7d127008;  0 drivers
+o000001fb7d127038 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v000001fb7d216890_0 .net/s "b", 31 0, o000001fb7d127038;  0 drivers
+v000001fb7d216930_0 .net/s "raw_y", 63 0, L_000001fb7d21d7e0;  1 drivers
+v000001fb7d21d600_0 .net/s "y", 31 0, L_000001fb7d21d880;  1 drivers
+L_000001fb7d21d6a0 .extend/s 64, o000001fb7d127008;
+L_000001fb7d21d740 .extend/s 64, o000001fb7d127038;
+L_000001fb7d21d7e0 .arith/mult 64, L_000001fb7d21d6a0, L_000001fb7d21d740;
+L_000001fb7d21d880 .part L_000001fb7d21d7e0, 24, 32;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mult_Q.v";
