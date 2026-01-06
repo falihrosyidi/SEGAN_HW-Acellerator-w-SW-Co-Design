@@ -34,7 +34,7 @@ module reg_file_input #(
     // --------------------------------------------------------
     integer i;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
             // Reset all registers to 0
             for (i = 0; i < N_REG; i = i + 1) begin
