@@ -3,8 +3,12 @@
 ## SPESIFIKASI:
 
 - Format Data :
+
   - DDR3 -> Float Single Precision
   - Others -> Fixed Point Q8.24
+
+- Format Addres :
+  - Register File -> Word-Addresable
 
 ### By GANbatte - Kelompok 6 VLSI K02 2025:
 
