@@ -1,9 +1,9 @@
-`ifndef PRELU_V
-`define PRELU_V
+`ifndef PRELU_Q_V
+`define PRELU_Q_V
 
-module PReLu #(
+module PReLu_Q #(
     parameter WIDTH = 32,
-    parameter FBITS = 27
+    parameter FBITS = 24
 ) (
     input  signed [WIDTH-1:0] x,
     input  signed [WIDTH-1:0] a,
