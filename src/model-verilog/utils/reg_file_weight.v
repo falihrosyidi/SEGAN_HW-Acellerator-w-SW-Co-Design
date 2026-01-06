@@ -19,9 +19,8 @@ module reg_file_weight #(
     reg signed [WIDTH-1:0] reg_f [N_REG-1:0];
 
     // --------------------------------------------------------
-    // 1. OUTPUT MAPPING (GENERATE BLOCK)
+    // 1. OUTPUT MAPPING
     // --------------------------------------------------------
-    // NOTES: To get Register N => all_weight[(N+1)*WIDTH-1 : N*WIDTH]
     genvar g;
     generate
         for (g = 0; g < N_REG; g = g + 1) begin : output_map
@@ -30,21 +29,41 @@ module reg_file_weight #(
     endgenerate
 
     // --------------------------------------------------------
-    // 2. SEQUENTIAL LOGIC
+    // 2. COUNTER & ADDRESS LOGIC
+    // --------------------------------------------------------
+    reg [3:0] count;
+    wire [4:0] addr;
+
+    // Address calculation: count * 2
+    assign addr = {count, 1'b0}; 
+
+    // --------------------------------------------------------
+    // 3. SEQUENTIAL PROCESS (Counter + Write)
     // --------------------------------------------------------
     integer i;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst) begin
+            // Reset Counter to top
+            count <= 4'd15;
+
             // Reset all registers to 0
             for (i = 0; i < N_REG; i = i + 1) begin
                 reg_f[i] <= {WIDTH{1'b0}};
             end
         end
         else if (en) begin
-            for (i = 1; i < N_REG; i = i + 1) begin
-            reg_f[N_REG-(2*i)] <= w_1;
-            reg_f[N_REG-(1*i)] <= w_2;
+            // 1. Write Data
+            
+            if (addr < N_REG) 
+                reg_f[addr] <= w_2;
+            
+            if (addr >= 1)    
+                reg_f[addr-1] <= w_1;
+
+            // 2. Decrement Counter
+            if (count != 0) begin
+                count <= count - 1;
             end
         end
     end
