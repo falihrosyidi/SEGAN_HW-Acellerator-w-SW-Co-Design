@@ -1,0 +1,54 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000017211002880 .scope module, "elmt_wise_add" "elmt_wise_add" 2 5;
+ .timescale 0 0;
+    .port_info 0 /INPUT 992 "out_multiply";
+    .port_info 1 /OUTPUT 32 "y";
+P_0000017211002a10 .param/l "FBITS" 0 2 7, +C4<00000000000000000000000000011000>;
+P_0000017211002a48 .param/l "N_REG" 0 2 8, +C4<00000000000000000000000000011111>;
+P_0000017211002a80 .param/l "WIDTH" 0 2 6, +C4<00000000000000000000000000100000>;
+v0000017211002e70_0 .var/i "i", 31 0;
+o0000017211036fe8 .functor BUFZ 992, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0000017211031eb0_0 .net/s "out_multiply", 991 0, o0000017211036fe8;  0 drivers
+v00000172110310f0_0 .var/s "temp_sum", 31 0;
+v0000017211031230_0 .var/s "y", 31 0;
+E_0000017211036690 .event anyedge, v00000172110310f0_0, v0000017211031eb0_0;
+    .scope S_0000017211002880;
+T_0 ;
+    %wait E_0000017211036690;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000172110310f0_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000017211002e70_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v0000017211002e70_0;
+    %cmpi/s 31, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/vec4 v00000172110310f0_0;
+    %load/vec4 v0000017211031eb0_0;
+    %load/vec4 v0000017211002e70_0;
+    %muli 32, 0, 32;
+    %part/s 32;
+    %add;
+    %store/vec4 v00000172110310f0_0, 0, 32;
+    %load/vec4 v0000017211002e70_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000017211002e70_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %load/vec4 v00000172110310f0_0;
+    %store/vec4 v0000017211031230_0, 0, 32;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "elmnt_wise_add.v";
