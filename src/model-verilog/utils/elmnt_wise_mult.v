@@ -15,9 +15,6 @@ module elmnt_wise_mult #(
 
     // Internal Memory Array to hold multiplication results
     wire signed [WIDTH-1:0] out_mult [N_REG-1:0];
-    
-    // Accumulator register
-    reg signed [WIDTH-1:0] out;
 
     // --------------------------------------------------------
     // 1. MULT MAPPING (GENERATE BLOCK)
