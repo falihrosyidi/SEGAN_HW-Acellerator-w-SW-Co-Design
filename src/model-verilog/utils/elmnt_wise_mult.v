@@ -1,17 +1,16 @@
-`ifndef PE
-`define PE
+`ifndef ELMNT_WISE_MULT
+`define ELMNT_WISE_MULT
 
 `include "mult_Q.v"
 
-module PE #(
+module elmnt_wise_mult #(
     parameter WIDTH = 32,
     parameter FBITS = 24,
     parameter N_REG = 31
 ) (
     input wire signed [N_REG*WIDTH-1:0] all_a,
     input wire signed [N_REG*WIDTH-1:0] all_w,
-    input wire signed [WIDTH-1:0] b,
-    output wire signed [WIDTH-1:0] y
+    output wire signed [N_REG*WIDTH-1:0] all_mult
 );
 
     // Internal Memory Array to hold multiplication results
@@ -23,9 +22,12 @@ module PE #(
     // --------------------------------------------------------
     // 1. MULT MAPPING (GENERATE BLOCK)
     // --------------------------------------------------------
+    // NOTES: To get Register N => all_outputs[(N+1)*WIDTH-1 : N*WIDTH]
     genvar g;
     generate
         for (g = 0; g < N_REG; g = g + 1) begin : mult_all
+            assign all_mult[(g+1)*WIDTH-1 : g*WIDTH] = out_mult[g];
+
             mult_Q #(
                 .WIDTH(WIDTH),
                 .FBITS(FBITS)
@@ -37,20 +39,6 @@ module PE #(
             );
         end
     endgenerate
-
-    // --------------------------------------------------------
-    // 2. ADD ALL OUT MULT (Combinational Sum)
-    // --------------------------------------------------------
-    integer i;
-    always @(*) begin
-        out = b; 
-        
-        for (i = 0; i < N_REG; i = i + 1) begin
-            out = out + out_mult[i];
-        end
-    end
-
-    assign y = out;
 
 endmodule
 `endif
