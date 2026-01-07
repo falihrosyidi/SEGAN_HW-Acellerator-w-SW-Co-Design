@@ -1,7 +1,7 @@
 `ifndef PRELU_Q_V
 `define PRELU_Q_V
 
-module PReLu_Q #(
+module prelu_Q #(
     parameter WIDTH = 32,
     parameter FBITS = 24
 ) (
