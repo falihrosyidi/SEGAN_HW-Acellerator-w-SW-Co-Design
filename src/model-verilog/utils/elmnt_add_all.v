@@ -1,8 +1,8 @@
-`ifndef ELMNT_WISE_ADD
-`define ELMNT_WISE_ADD
+`ifndef ELMNT_ADD_ALL
+`define ELMNT_ADD_ALL
 
 
-module elmnt_wise_add #(
+module elmnt_add_all #(
     parameter WIDTH = 32,
     parameter FBITS = 24,
     parameter N_REG = 31

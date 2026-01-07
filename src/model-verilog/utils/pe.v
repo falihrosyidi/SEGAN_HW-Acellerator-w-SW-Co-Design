@@ -2,7 +2,7 @@
 `define PE
 
 `include "elmnt_wise_mult.v"
-`include "elmnt_wise_add.v"
+`include "elmnt_add_all.v"
 `include "prelu_Q.v"
 
 module PE #(
@@ -34,9 +34,9 @@ module PE #(
     );
 
     // STAGE ADD ALL OUT MULT
-    elmnt_wise_add #(
+    elmnt_add_all #(
         .WIDTH(WIDTH), .FBITS(FBITS), .N_REG(N_REG)
-    ) u_elmnt_wise_add (
+    ) u_elmnt_add_all (
         .out_multiply(out_all_mult), .y(out_add_all)
     );
 
