@@ -81,25 +81,19 @@ module pe_tb;
         $display("==========================================================================\n");
         $finish;
     end
-//     // -----------------------------------------------------------
-// // DEBUG HELPER: Add this inside your Testbench module
-// // -----------------------------------------------------------
 
-// // 1. Define the parameters again if needed
-// localparam DEBUG_WIDTH = 32;
-// localparam DEBUG_N     = 31;
-
-// // 2. Use a Generate Loop to create separate wires for GTKWave
-// genvar k;
-// generate
-//     for (k = 0; k < DEBUG_N; k = k + 1) begin : probe
-//         // This slices the big bus "all_mult" into 32-bit chunks
-//         // Replace 'uut.all_mult' with the actual path to your signal
-//         wire signed [DEBUG_WIDTH-1:0] a;
-//         wire signed [DEBUG_WIDTH-1:0] b;
-        
-//         assign a = uut.all_a[(k+1)*DEBUG_WIDTH-1 : k*DEBUG_WIDTH];
-//         assign b = uut.all_b[(k+1)*DEBUG_WIDTH-1 : k*DEBUG_WIDTH];
-//     end
-// endgenerate
+    // DEBUG UNPACKER: View separate signals in GTKWave
+    // -----------------------------------------------------------
+    genvar k;
+    generate
+        for (k = 0; k < N_REG; k = k + 1) begin : unpack
+            // 1. Declare wires for individual 32-bit values
+            wire signed [WIDTH-1:0] val_a;
+            wire signed [WIDTH-1:0] val_w;
+            
+            // 2. Slice the main big bus into these small wires
+            assign val_a = all_a[(k+1)*WIDTH-1 : k*WIDTH];
+            assign val_w = all_w[(k+1)*WIDTH-1 : k*WIDTH];
+        end
+    endgenerate
 endmodule

@@ -1,0 +1,197 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jan 07 09:22:15 2026
+[*]
+[dumpfile] "D:\Falih\VLSI\SEGAN_HW-Acellerator-w-SW-Co-Design\src\model-verilog\utils\pe_tb.vcd"
+[dumpfile_mtime] "Wed Jan 07 09:05:52 2026"
+[dumpfile_size] 49856
+[savefile] "D:\Falih\VLSI\SEGAN_HW-Acellerator-w-SW-Co-Design\src\model-verilog\utils\PE_combi.gtkw"
+[timestart] 13910
+[size] 1000 600
+[pos] -1 -1
+*-13.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] pe_tb.
+[sst_width] 197
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@40c00600
+-input
+@40000420
+[fpshift_count] 24
+pe_tb.unpack[0].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[1].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[2].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[3].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[4].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[5].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[6].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[7].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[8].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[9].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[10].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[11].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[12].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[13].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[14].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[15].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[16].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[17].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[18].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[19].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[20].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[21].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[22].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[23].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[24].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[25].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[26].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[27].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[28].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[29].val_a[31:0]
+[fpshift_count] 24
+pe_tb.unpack[30].val_a[31:0]
+@41401600
+-input
+@40000420
+[fpshift_count] 24
+pe_tb.alpha[31:0]
+@40c00420
+[fpshift_count] 24
+pe_tb.b[31:0]
+@28
+(0)pe_tb.b[31:0]
+(1)pe_tb.b[31:0]
+(2)pe_tb.b[31:0]
+(3)pe_tb.b[31:0]
+(4)pe_tb.b[31:0]
+(5)pe_tb.b[31:0]
+(6)pe_tb.b[31:0]
+(7)pe_tb.b[31:0]
+(8)pe_tb.b[31:0]
+(9)pe_tb.b[31:0]
+(10)pe_tb.b[31:0]
+(11)pe_tb.b[31:0]
+(12)pe_tb.b[31:0]
+(13)pe_tb.b[31:0]
+(14)pe_tb.b[31:0]
+(15)pe_tb.b[31:0]
+(16)pe_tb.b[31:0]
+(17)pe_tb.b[31:0]
+(18)pe_tb.b[31:0]
+(19)pe_tb.b[31:0]
+(20)pe_tb.b[31:0]
+(21)pe_tb.b[31:0]
+(22)pe_tb.b[31:0]
+(23)pe_tb.b[31:0]
+(24)pe_tb.b[31:0]
+(25)pe_tb.b[31:0]
+(26)pe_tb.b[31:0]
+(27)pe_tb.b[31:0]
+(28)pe_tb.b[31:0]
+(29)pe_tb.b[31:0]
+(30)pe_tb.b[31:0]
+(31)pe_tb.b[31:0]
+@41401200
+-group_end
+@40000420
+[fpshift_count] 24
+pe_tb.y[31:0]
+@40c00601
+-w
+@40000420
+[fpshift_count] 24
+pe_tb.unpack[0].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[1].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[2].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[3].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[4].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[5].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[6].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[7].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[8].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[9].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[10].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[11].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[12].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[13].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[14].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[15].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[16].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[17].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[18].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[19].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[20].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[21].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[22].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[23].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[24].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[25].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[26].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[27].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[28].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[29].val_w[31:0]
+[fpshift_count] 24
+pe_tb.unpack[30].val_w[31:0]
+@41401601
+-w
+[pattern_trace] 1
+[pattern_trace] 0
