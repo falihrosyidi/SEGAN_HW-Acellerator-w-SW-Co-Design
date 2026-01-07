@@ -5,7 +5,7 @@
 `include "elmnt_add_all.v"
 `include "prelu_Q.v"
 
-module PE #(
+module pe #(
     parameter WIDTH = 32,
     parameter FBITS = 24,
     parameter N_REG = 31
