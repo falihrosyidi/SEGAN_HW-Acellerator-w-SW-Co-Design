@@ -1,5 +1,5 @@
-`ifndef MULT_Q_V
-`define MULT_Q_V
+`ifndef MULT_Q
+`define MULT_Q
 
 module mult_Q #(
     parameter WIDTH = 32,
